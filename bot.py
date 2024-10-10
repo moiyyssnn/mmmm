@@ -185,7 +185,7 @@ def main():
 
     run_task = input("Do you want to continue completing tasks ? ✓ (y/n): ").strip().lower()
     while True:
-        tokens = load_tokens('JOO.txt')
+        tokens = load_tokens('data.txt')
         proxies = load_proxies('proxies.txt')  # Proxies ka naam dena hai
 
         clear_terminal()
