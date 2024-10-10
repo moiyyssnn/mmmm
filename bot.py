@@ -1,24 +1,69 @@
 import os
 from os import system as ss
+ll = 'pip install'
+try:
+    from cfonts import render
+except ModuleNotFoundError:
+    ss(ll+' python-cfonts')
+try:
+    import requests
+except ModuleNotFoundError:
+    os.system("pip install requests")
+import pytz
 import time
 import requests
 from datetime import datetime
 from colorama import Fore, Style, init
 from fake_useragent import UserAgent
 
-try:
-    from cfonts import render
-except ModuleNotFoundError:
-    ss('pip install python-cfonts')
-try:
-    import requests
-except ModuleNotFoundError:
-    os.system("pip install requests")
-    
+
+d = "MOHSIN"
+
+JOONYS = render(f'{d}', colors=['red', 'yellow'], align='center')
+print(JOONYS)
+
+print("""\033[1;37m
+╔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╗                    
+║\33[0;41m[ ENTER THE TOOL'S PASSWORD ✅ ] \033[0;92m║
+╚━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╝              """)
+password = 'chut'
+one = str(input('''❖ - 𝐏𝐀𝐒𝐒𝐖𝐑𝐃 :  ''') )
+if one == password:
+    print(f"""
+𝐘𝐨𝐮 𝐡𝐚𝐯𝐞 𝐛𝐞𝐞𝐧 𝐥𝐨𝐠𝐠𝐞𝐝 𝐢𝐧 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 ✅
+𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐭𝐡𝐞 𝐭𝐨𝐨𝐥 ⚡ """)
+    time.sleep(1)
+else:
+    exit("""
+𝚃𝚑𝚎 𝚙𝚊𝚜𝚜𝚠𝚘𝚛𝚍 𝚒𝚜 𝚒𝚗𝚌𝚘𝚛𝚛𝚎𝚌𝚝 ❌ 
+𝙿𝚕𝚎𝚊𝚜𝚎 𝚌𝚘𝚗𝚝𝚊𝚌𝚝 𝚝𝚑𝚎 𝚍𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛 𝚝𝚘 𝚏𝚒𝚗𝚍 𝚘𝚞𝚝 @moiyyssnn ✅""")
+
+os.system('clear')
+
 init(autoreset=True)
 
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
+
+def art():
+    draw_tree()
+
+def draw_tree():
+    print(f"{render('MOHSIN', colors=['red', 'yellow'], align='center')}")
+    top_banner = f"""
+\033[93m{"="*50}
+\033[91m************ \033[93mSEED ✅ \033[91m************
+\033[93m{"="*50}\033[0m
+
+\033[96m{"-"*50}
+\033[92mBuy future scripts \033[97m@moiyyssnn
+\033[92mJoin for update \033[97mhttps://t.me/+k0YDCIQExqxlOWM1
+\033[96m{"-"*50}
+\033[0m"""
+    print(top_banner)
+    print(f"{Fore.GREEN + Style.BRIGHT} - 𝐀𝐮𝐭𝐨 𝐂𝐥𝐚𝐢𝐦 ✅ {Style.RESET_ALL}")
+    print(f"{Fore.GREEN + Style.BRIGHT} - 𝐀𝐮𝐭𝐨 𝐓𝐚𝐬𝐤𝐬 ✅ {Style.RESET_ALL}")
+    print(f"{Fore.GREEN + Style.BRIGHT} - 𝐀𝐮𝐭𝐨 𝐒𝐩𝐢𝐧 ✅ {Style.RESET_ALL}")
 
 def load_tokens_and_proxies(token_file, proxy_file):
     with open(token_file, 'r') as token_f:
@@ -120,41 +165,4 @@ def task(token, proxy):
     if task_data:
         tasks = task_data.get('data', [])
         for task in tasks:
-            url_complete = f"https://elb.seeddao.org/api/v1/tasks/{task['id']}"
-            task_complete_data = handle_request('POST', url_complete, headers, proxy)
-            if task_complete_data:
-                task_name = task.get('name', 'Unknown Task')
-                print(f"{Fore.GREEN + Style.BRIGHT}Task »» '{task_name}' success ✓ using proxy {proxy}")
-            time.sleep(5)
-
-def countdown_timer(seconds):
-    while seconds > 0:
-        mins, secs = divmod(seconds, 60)
-        hours, mins = divmod(mins, 60)
-        print(f"{Fore.CYAN + Style.BRIGHT}Wait {hours:02}:{mins:02}:{secs:02}", end='\r')
-        time.sleep(1)
-        seconds -= 1
-    print("Wait 00:00:00          ", end='\r')
-
-def main():
-    clear_terminal()
-    
-    run_task = input("Do you want to continue completing tasks ? ✓ (y/n): ").strip().lower()
-    tokens, proxies = load_tokens_and_proxies('data.txt', 'proxies.txt')
-
-    while True:
-        clear_terminal()
-
-        for i, (token, proxy) in enumerate(zip(tokens, proxies), start=1):
-            print(f"{Fore.CYAN + Style.BRIGHT}Number of accounts »» {i} using proxy: {proxy}{Style.RESET_ALL}")
-            login(token, proxy)
-            daily_bonus(token, proxy)
-            claim(token, proxy)
-            spin(token, proxy)
-            if run_task == 'y':
-                task(token, proxy)
-
-        countdown_timer(1 * 60 * 60)
-
-if __name__ == "__main__":
-    main()
+            print(f"{Fore.MAGENTA + Style.BRIGHT}Task
