@@ -27,7 +27,7 @@ print("""\033[1;37m
 ╔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╗                    
 ║\33[0;41m[ ENTER THE TOOL'S PASSWORD ✅ ] \033[0;92m║
 ╚━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╝              """)
-password = 'mohsin'
+password = 'chut'
 one = str(input('''❖ - 𝐏𝐀𝐒𝐒𝐖𝐑𝐃 :  ''') )
 if one == password:
     print(f"""
@@ -187,7 +187,7 @@ def main():
 
     run_task = input("Do you want to continue completing tasks ? ✓ (y/n): ").strip().lower()
     while True:
-        tokens = load_tokens('JOO.txt')
+        tokens = load_tokens('data.txt')
 
         clear_terminal()
         art()
